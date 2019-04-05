@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Prkatikum 20 - modal dialog</title>
+        <script type="text/javascript" src="asset/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="asset/css/modal.css">
+    </head>
+<body>
+        <center><h1>membuat modal dialog dengan jquery</h1></center>
+        <button id="tombol">KLIK SAYA !!</button>
+        KLIK TOMBOL UNTUUK MENAMPILKAN MODAL DIALOG
+        <div id="bg"></div>
+        <div id="modal-kotak">
+            <div id="atas">
+                Halo . ini adalah modal dialog
+                <form name ="fform">
+                    <table border="1" align = "center" width="60%">
+                        
+                        <tr>
+                            <td width="90%">
+                                
+                                <input type="text" id="nilai1" name="nilai1" placeholder="nilai 1" style="width:90%"><br>
+                                <input type="text" id="nilai2" name="nilai2" placeholder="nilai 2" style="width:90%"><br><br>
+                
+                                
+                
+                                
+                                <input type="text" id="hasil" name="hasil" placeholder="hasil" style="width:90%"><br>
+                
+                                
+                              
+                            </td>
+                            <td width ="100%">
+                                <button id="tambah">+</button>
+                                <button id="min">-</button>
+                                <button id="bag">:</button>
+                                <button id="kak">x</button>
+                            </td>
+                        </tr>
+                        
+                    </table>
+                </form>
+                
+
+            </div>
+            <div id="bawah">
+                <button id="tombol-tutup">CLOSE</button>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+
+
+            $(document).ready(function(){
+                 $('#tombol').click(function(){
+                     $('#modal-kotak , #bg').fadeIn("slow");
+                });
+                $('#tombol-tutup').click(function(){
+                     $('#modal-kotak , #bg').fadeOut("slow");
+                  
+                });
+
+                $("#tambah").click(function(){
+                var nilai1 = $("#nilai1").val;
+                var nilai2 = $("#nilai2").val;
+
+                var hasil = parseInt(nilai1 + nilai2);
+                $("#hasil").val(hasil);
+
+            });
+                $("#min").click(function(){
+                var nilai1 = $("#nilai1").val;
+                var nilai2 = $("#nilai2").val;
+
+                var hasil = parseInt("nilai1") - parseInt("nilai2");
+                $("#hasil").val(hasil);
+
+            });
+                $("#bag").click(function(){
+                var nilai1 = $("#nilai1").val;
+                var nilai2 = $("#nilai2").val;
+
+                var hasil = parseInt("nilai1") / parseInt("nilai2");
+                $("#hasil").val(hasil);
+              });
+            });
+            
+        </script>
+</body>
+</html>
